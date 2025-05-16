@@ -1,0 +1,227 @@
+:root {
+  --primary-color: #154c79;
+  --accent-color: #c95f1f;
+  --background: #f4f4f4;
+  --light: #ffffff;
+  --dark: #1a1a1a;
+  --hover: #0c2c48;
+}
+
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background);
+  color: var(--dark);
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+/* Typography */
+h1, h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1.5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--light);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+}
+
+/* Header */
+header {
+  background-color: var(--primary-color);
+  color: var(--light);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+header img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+header span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Navigation */
+nav {
+  background-color: #000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+}
+
+nav ul li {
+  margin: 0.5rem;
+}
+
+nav ul li a {
+  padding: 0.5rem 1rem;
+  display: block;
+  transition: background 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  background-color: var(--hover);
+  border-radius: 4px;
+}
+
+nav ul li a.active {
+  background-color: var(--accent-color);
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* Hamburger Toggle (Mobile) */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 1rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  width: 100%;
+  text-align: right;
+}
+
+/* Layout */
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 0;
+}
+
+section {
+  margin-bottom: 2rem;
+  background: var(--light);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+/* Course Buttons */
+.courses {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.courses button {
+  padding: 0.75rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.courses button.cse {
+  background-color: #8b0000;
+}
+
+.courses button.wdd {
+  background-color: #2e8b57;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.filter-buttons button {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: var(--light);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0.5rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    display: none;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .courses {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 1rem 0.5rem;
+  }
+}
